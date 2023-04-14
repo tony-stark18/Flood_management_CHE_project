@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.page-1 {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgb(210, 255, 226) 0%, rgba(255,255,255,1) 100%);
+}
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  z-index: 100;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #C2FBD7;
+  font-size: 19px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.menu li {
+  float: left;
+}
+
+.menu li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 13px 32px;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: #AFE6C3;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* Styling for menu button */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  font-size: 20px;
+  border: none;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.content h1 {
+  font-size: 70px;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 5px;
+  background: url("sadiq-nafee-nrnd1-fTsdQ-unsplash.jpg") 50% 50%;
+  background-size: cover;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  text-shadow: rgba(115, 115, 115, 0.295) 0px 3px 6px;
+}
+.button {
+  position: relative;
+  top: 30px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #30D46F;
+  transition: all 0.2s ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.button:active {
+  transform: scale(0.96);
+}
+.button:before,
+.button:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+.button.animate::before {
+  top: -70%;
+  background-image: radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #AFE6C3 20%, transparent 30%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #AFE6C3 15%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  animation: greentopBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+.button.animate::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #AFE6C3 15%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%),
+    radial-gradient(circle, #AFE6C3 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  animation: greenbottomBubbles ease-in-out 0.6s forwards infinite;
+}
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+.left {
+  height: 45vh;
+  width: 22%;
+  /* background-color: #e1d4ff; */
+  background: url("jesus-ge76e0dbc4_1920.jpg");
+  background-size: cover;
+  opacity: 0.9;
+  filter: blur(1px);
+  position: relative;
+  top: 100px;
+  left: 50px;
+  border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.left-content {
+  height: 45vh;
+  width: 21%;
+  position: absolute;
+  top: 100px;
+  left: 55px;
+  color: #dbdbdb;
+  padding: 10px 10px;
+  padding-top: 5px;
+  font-size: 22px;
+  text-align: left;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.right {
+  height: 45vh;
+  width: 22%;
+  /* background-color: #ffffff;
+     */
+  background: url("Web\ 1920\ –\ 1.png");
+  background-size: cover;
+  position: relative;
+  float: right;
+  bottom: 50px;
+  right: 40px;
+  border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+h1 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.container {
+  width: 95%;
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  padding: 10px 50px;
+  margin-left: 50px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.cause {
+  width: 60%;
+}
+.cause p {
+  font-size: 24px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.container img {
+  float: right;
+  width: 370px;
+  position: relative;
+  bottom: 250px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 3%;
+}
+.page-2 h1 {
+  font-size: 50px;
+  text-align: left;
+}
+.page-2 {
+  padding: 10px 50px;
+  padding-bottom: 0;
+}
+.left-cause {
+  padding: 10px 0px;
+}
+#deforestation {
+  margin-top: 30px;
+}
+.page-3 {
+  padding: 10px 50px;
+  margin-top: 50px;
+}
+.page-3 h1 {
+  font-size: 50px;
+  display: inline;
+}
+.content-3 {
+  font-size: 24px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 65%;
+  display: inline-block;
+}
+#effects-1{
+  bottom: 600px;
+}
+#right-para{
+  float: right;
+  position: relative;
+  left: 450px;
+  bottom: 10px;
+  text-align: justify;
+}
+#effects-2{
+  float: left;
+  bottom: 300px;
+}
+p::selection{
+  background-color: #beffeb;
+}
+.page-4{
+  position: absolute;
+  margin:50px 100px;
+}
+.next{
+  position: relative;
+  top: 100px;
+  left: 400px;
+  float: right;
+  padding: 15px 30px;
+  background-color: #30D46F;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.135) 0px 8px 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.next::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #c5ffd6;
+    color: #777;
+    z-index: -1;
+    transition: all 0.3s;
+}
+.next:hover::after
+{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.next:hover
+{
+    transform: translateY(-3px);
+}
+.next:active
+{
+    transform: translateY(-1px);
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 3px 6px;
+}
